@@ -240,6 +240,7 @@ class raporController extends Controller
             ['tas_id', $ta->id]
         ])->count();
         if ($jum > 1) {
+
             $nilaiKep = kep::with('siswas')->where([
                 ['kelas_id', $request->kelas],
                 ['smt', $request->smt],

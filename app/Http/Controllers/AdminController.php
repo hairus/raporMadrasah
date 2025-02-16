@@ -16,7 +16,7 @@ use App\Models\ta;
 use App\Models\trx_absen;
 use App\Models\trx_nilai;
 use App\Models\trx_mapel;
-use App\tgl_rapor;
+use App\Models\tgl_rapor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Facade;
