@@ -308,6 +308,8 @@ class raporController extends Controller
         return view('rapor.inputSIA', compact('kelas', 'smt'));
     }
 
+
+
     public function simSIA(Request $request)
     {
         $ta = ta::where('aktif', 1)->first();
