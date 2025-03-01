@@ -35,8 +35,8 @@
                     <hr>
                     <br>
                     <br>
-                    <div class="table table-responsive">
-                        <table class="table table-striped">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="example">
                             <thead>
                             <th>No</th>
                             <th>Kelas</th>
@@ -66,5 +66,12 @@
             </div>
         </div>
     </div>
-
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+@endpush
+

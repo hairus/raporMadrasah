@@ -27,6 +27,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     Route::get('admin/inputSiswa', [App\Http\Controllers\HomeController::class, 'inputSiswa']);
+    Route::get('admin/delSiswa/{id}', [App\Http\Controllers\HomeController::class, 'delSiswa']);
     Route::post('admin/SimSis', [App\Http\Controllers\HomeController::class, 'save']);
     Route::get('admin/absen', [App\Http\Controllers\AdminController::class, 'index']);
     Route::post('admin/saveA', [App\Http\Controllers\AdminController::class, 'index']);
@@ -45,6 +46,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/aktifTa/{id}', [App\Http\Controllers\AdminController::class, 'aktifTa']);
     Route::get('/admin/KelasSiswa', [App\Http\Controllers\AdminController::class, 'KelasSiswa']);
     Route::get('/admin/KelasSiswa/{id}', [App\Http\Controllers\AdminController::class, 'KelasSiswaId']);
+    Route::get('/admin/createMapel', [App\Http\Controllers\AdminController::class, 'createMapel']);
+    Route::post('/admin/saveMapel', [App\Http\Controllers\AdminController::class, 'saveMapel']);
     Route::get('/admin/kembaliKelas/{id}', [App\Http\Controllers\AdminController::class, 'kembaliKelas']);
     Route::get('/admin/naikKelas/{id}', [App\Http\Controllers\AdminController::class, 'naikKelas1']);
     Route::post('/admin/naikKelas/', [App\Http\Controllers\AdminController::class, 'naikKelas']);
@@ -88,8 +91,10 @@ Route::group(['middleware' => ['admin']], function () {
 
     /* settigan mapel kelas*/
     Route::get('/admin/mapelKelas', [App\Http\Controllers\AdminController::class, 'mapel_kelas']);
+    Route::post('admin/saveMapelbaru', [App\Http\Controllers\AdminController::class, 'saveMapelbaru']);
     Route::post('admin/saveMapel', [App\Http\Controllers\AdminController::class, 'saveMapel']);
     Route::get('/admin/delMapelKelas/{id}', [App\Http\Controllers\AdminController::class, 'delMapelKelas']);
+    Route::get('/admin/delMapel/{id}', [App\Http\Controllers\AdminController::class, 'delMapel']);
     /*----------*/
 
 

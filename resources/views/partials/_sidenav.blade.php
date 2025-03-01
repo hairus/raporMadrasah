@@ -31,6 +31,7 @@
                         <ul class="nav child_menu">
                             <li><a href="{{ url('/admin/inputSiswa/') }}">Tambah Siswa</a></li>
                             <li><a href="{{ url('/admin/KelasSiswa') }}">Kelas Siswa</a></li>
+
                             {{-- <li><a href="{{ url('admin/absen') }}">Absen Siswa</a></li> --}}
                             {{-- <li><a href="{{ url('admin/laporan') }}">Cetak Laporan Bulanan</a></li> --}}
                             <li><a href="{{ url('admin/smt') }}">Aktifasi Semester</a></li>
@@ -51,6 +52,7 @@
                             <li><a href="{{url('/admin/addTa')}}">Tambah Tahun Ajaran</a></li>
                             <li><a href="{{url('/admin/addTgl')}}">Tambah Tanggal Rapor</a></li>
                             <li><a href="{{url('/admin/add')}}">Tambah User</a></li>
+                            <li><a href="{{ url('/admin/createMapel') }}">Create Mapel</a></li>
                             <li><a href="{{url('/admin/mapelKelas')}}">Mapel Kelas</a></li>
                             <li><a href="{{url('/admin/showUser')}}">List User</a></li>
                             <li><a href="{{url('/admin/showSiswaEdit')}}">Edit Siswa</a></li>

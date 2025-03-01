@@ -38,7 +38,16 @@ class HomeController extends Controller
 
     public function inputSiswa()
     {
-        return view('admin/formInput');
+        $siswas = mst_siswa::paginate(10);
+
+        return view('admin/formInput', compact('siswas'));
+    }
+
+    public function delSiswa($id)
+    {
+        $del = mst_siswa::where('id', $id)->delete();
+
+        return back();
     }
 
     public function save(Request $request)

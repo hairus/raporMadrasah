@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class adminMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -22,6 +22,5 @@ class adminMiddleware
                 return $next($request);
             }
         return abort('403');
-        return $next($request);
     }
 }

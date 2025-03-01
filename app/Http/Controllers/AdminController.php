@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MapelKelas;
 use App\Models\mst_siswa;
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use App\Models\ket;
 use App\Models\smt;
@@ -312,23 +312,20 @@ class AdminController extends Controller
     public function formSmt()
     {
         $smt = smt::all();
-
         return view('admin.formSmt', compact('smt'));
     }
 
     public function updatesmt(Request $request)
     {
-        $default = DB::table('smt')
-            ->update([
-                'flag' => 0
-            ]);
-        if ($default == TRUE) {
-            DB::table('smt')
-                ->where('id', $request->smt)
-                ->update([
-                    'flag' => 1
-                ]);
+        $default = smt::all();
+        foreach ($default as $smt) {
+            $smt->flag = 0;
+            $smt->save();
         }
+
+        $smt = smt::find($request->smt);
+        $smt->flag = 1;
+        $smt->save();
 
         return redirect('/admin/smt')->with('status', 'Perubahan Nilai Berhasil');
     }
@@ -604,9 +601,26 @@ class AdminController extends Controller
         return back();
     }
 
+    public function saveMapelbaru(Request $request)
+    {
+       $mapel = mapels::create([
+           "mapel" => $request->mapel
+       ]);
+
+        return back();
+    }
+
     public function delMapelKelas($id)
     {
         MapelKelas::where('id', $id)->delete();
+
+        return back();
+    }
+
+    public function delMapel($id)
+    {
+        $mapel = mapels::find($id);
+        $mapel->delete();
 
         return back();
     }
@@ -651,6 +665,16 @@ class AdminController extends Controller
 
         return view('admin.kelasSiswa', compact('kelas'));
     }
+
+    public function createMapel()
+    {
+        $mapels = mapels::all();
+
+        return view('admin.createMapel', compact('mapels'));
+    }
+
+
+
 
     public function KelasSiswaId($id)
     {
