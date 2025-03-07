@@ -137,7 +137,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $siswas->links() }}
                 </div>
             </div>
         </div>

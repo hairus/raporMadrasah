@@ -48,7 +48,7 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <select class="select2_single form-control" tabindex="-1" name="smt">
                                 <option>---</option>
-                                    <option value="{{ $smt->smt }}">{{ $smt->smt }}</option>
+                                    <option value="{{ $smt->semester }}">{{ $smt->semester }}</option>
                             </select>
                         </div>
                     </div>

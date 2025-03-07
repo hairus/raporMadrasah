@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MapelKelas;
 use App\Models\mst_siswa;
 use App\Models\User;
+use App\Models\wali;
 use Carbon\Carbon;
 use App\Models\ket;
 use App\Models\smt;
@@ -852,10 +853,35 @@ class AdminController extends Controller
 
     public function addTgl1(Request $request)
     {
-        $sim = tgl_rapor::create([
+        $tgl = tgl_rapor::create([
             "tgl_rapor" => $request->tgl
         ]);
 
         return view("rapor.addtgl");
+    }
+
+    public function addWali()
+    {
+        $wali = wali::all();
+
+        return view("admin.addwali", compact('wali'));
+    }
+
+    public function saveWali(Request $request)
+    {
+        $sim = wali::create([
+            "nama" => $request->nama,
+            "kelas_id" => $request->kelas_id
+        ]);
+
+        return back();
+    }
+
+    public function delWali($id)
+    {
+        $wali = wali::find($id);
+        $wali->delete();
+
+        return back();
     }
 }

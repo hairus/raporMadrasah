@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\nilai_akhir;
 use App\Models\smt;
 use App\Models\kep;
 use Carbon\Carbon;
@@ -15,7 +16,7 @@ use App\Models\trx_nilai;
 use App\Models\SIA;
 use App\Models\ta;
 use App\Models\wali;
-use App\tgl_rapor;
+use App\Models\tgl_rapor;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
@@ -40,6 +41,7 @@ class raporController extends Controller
             ['smt', $request->smt],
             ['tas_id', $ta->id],
         ])->distinct('nis')->get()->sortBy('siswa.nama');
+//        dd($nilai);
 //        $siswas = mst_siswa::where([
 //            ['kls', $request->kelas],
 //            ['flag', 1]
@@ -139,7 +141,13 @@ class raporController extends Controller
             ])->sum('alpha');
 
             $wali = wali::where('kelas_id', $kls->kls)->first();
-            return view('rapor.nilai2', compact('wali','mapel', 'nilai', 'rata', 'smt', 'siswa', 'total', 'totalRata', 'kep', 'sakit', 'ijin', 'alpa', 'rataAnak', 'tgl'));
+            $na = nilai_akhir::where([
+                'nis' => $nis,
+                'tas_id' => $ta->id,
+                "smt" => $smt->id
+            ])->first();
+
+            return view('rapor.nilai2', compact('wali','mapel', 'nilai', 'rata', 'smt', 'siswa', 'total', 'totalRata', 'kep', 'sakit', 'ijin', 'alpa', 'rataAnak', 'tgl', 'na'));
         } else {
             $ta = ta::where('aktif', 1)->first();
             $smt = smt::where('flag', 1)->first();

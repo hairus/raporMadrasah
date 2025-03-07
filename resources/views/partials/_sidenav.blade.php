@@ -31,6 +31,7 @@
                         <ul class="nav child_menu">
                             <li><a href="{{ url('/admin/inputSiswa/') }}">Tambah Siswa</a></li>
                             <li><a href="{{ url('/admin/KelasSiswa') }}">Kelas Siswa</a></li>
+                            <li><a href="{{ url('/admin/addWali') }}">Wali Kelas</a></li>
 
                             {{-- <li><a href="{{ url('admin/absen') }}">Absen Siswa</a></li> --}}
                             {{-- <li><a href="{{ url('admin/laporan') }}">Cetak Laporan Bulanan</a></li> --}}

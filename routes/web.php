@@ -75,6 +75,9 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/delSis/fix', [App\Http\Controllers\AdminController::class, 'deleteSiswa']);
     Route::post('/admin/delSis/fix', [App\Http\Controllers\AdminController::class, 'deleteSiswa']);
     Route::get('/admin/addTa', [App\Http\Controllers\AdminController::class, 'addTa']);
+    Route::get('/admin/addWali', [App\Http\Controllers\AdminController::class, 'addWali']);
+    Route::post('/admin/addWali', [App\Http\Controllers\AdminController::class, 'saveWali']);
+    Route::get('/admin/{id}/del', [App\Http\Controllers\AdminController::class, 'delWali']);
 
 
     /*export excel*/

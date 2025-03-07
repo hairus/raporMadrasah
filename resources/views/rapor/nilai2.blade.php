@@ -100,9 +100,8 @@
 <table width="100%" border="1">
   <tbody>
     <tr>
-      <td width="34%">&nbsp;</td>
-      <td width="20%">&nbsp;</td>
-      <td width="46%" align="center">Nilai</td>
+      <td width="34%"><b>Rangking</b></td>
+      <td width="20%" style="text-align: center"><b>{{ $na->ranking }}</b></td>
     </tr>
     <tr>
       <td>Kepribadian</td>
@@ -165,7 +164,7 @@
     <tr>
       <td>Tanggal</td>
       <td>:</td>
-      <td>&nbsp;</td>
+      <td>{{$tgl->tgl_rapor}}</td>
       <td>Dengan Memperhatikan Hasil Yang Di Capai Pada Semester I Dan II Maka Murid ini Ditetapkan :</td>
     </tr>
     @if($rataAnak >= 59)

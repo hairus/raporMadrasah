@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     public function inputSiswa()
     {
-        $siswas = mst_siswa::paginate(10);
+        $siswas = mst_siswa::all();
 
         return view('admin/formInput', compact('siswas'));
     }

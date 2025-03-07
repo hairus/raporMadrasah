@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class tgl_rapor extends Model
 {
     protected $table = 'tgl_rapor';
+    protected $guarded = [];
+
 }

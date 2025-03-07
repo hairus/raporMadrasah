@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class SIA extends Model
 {
-    protected $table = 'siarapor';
+    protected $table = 'siaRapor';
     protected $guarded = [];
 }
