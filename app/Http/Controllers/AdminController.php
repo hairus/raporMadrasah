@@ -736,6 +736,7 @@ class AdminController extends Controller
         //sinkron jika semester ganjil tidak ada naik kelas
         $rangking = 1;
         $kelas = Kelas::where('kelas', '<>', 'lulus')->get();
+
         $ta = ta::where('aktif', 1)->first();
         if($ta->smt == 1){
             // ini funsi untuk insert dan update nilai ke table nilai_akhirs
