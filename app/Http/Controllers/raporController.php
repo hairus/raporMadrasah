@@ -78,6 +78,7 @@ class raporController extends Controller
             $smt = smt::where('flag', 1)->first();
             $siswa = mst_siswa::where('nis', $nis)->first();
             $kls = mst_siswa::select('kls')->where('nis', $nis)->first();
+            $jum_siswa = mst_siswa::where('kls', $siswa->kls)->count();
 
             $mapel = MapelKelas::where([
                 ['kelas_id', $kls->kls],
@@ -147,7 +148,7 @@ class raporController extends Controller
                 "smt" => $smt->id
             ])->first();
 
-            return view('rapor.nilai2', compact('wali','mapel', 'nilai', 'rata', 'smt', 'siswa', 'total', 'totalRata', 'kep', 'sakit', 'ijin', 'alpa', 'rataAnak', 'tgl', 'na'));
+            return view('rapor.nilai2', compact('wali','mapel', 'nilai', 'rata', 'smt', 'siswa', 'total', 'totalRata', 'kep', 'sakit', 'ijin', 'alpa', 'rataAnak', 'tgl', 'na', 'jum_siswa'));
         } else {
             $ta = ta::where('aktif', 1)->first();
             $smt = smt::where('flag', 1)->first();
@@ -372,5 +373,13 @@ class raporController extends Controller
         $siswa->save();
 
         return redirect()->route('siswaEdit');
+    }
+
+    public function rangRapor()
+    {
+        $ta = ta::where('aktif', 1)->first();
+        $na = nilai_akhir::with('siswas', 'tas')->orderBy('kelas_id')->orderBy('ranking')->get()->sortBy('siswas.nama');
+
+        return view('rapor.rangRapor', compact( 'na'));
     }
 }

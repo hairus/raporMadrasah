@@ -45,6 +45,7 @@
                             <li><a href="{{ url('rapor/sia') }}">Input SIA</a></li>
                             <li><a href="{{ url('rapor/kep') }}">Input Kepribadian</a></li>
                             <li><a href="{{ url('rapor/cetak') }}">Cetak Rapor</a></li>
+                            <li><a href="{{ url('rapor/rangRapor') }}">Ranking Rapor</a></li>
                             <li><a href="{{ url('/admin/rapor/cetakLegger') }}">Cetak Legger</a></li>
                         </ul>
                     </li>

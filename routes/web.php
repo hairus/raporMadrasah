@@ -125,4 +125,5 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('rapor/sia', [App\Http\Controllers\raporController::class, 'formSia']);
     Route::post('rapor/saveSIA', [App\Http\Controllers\raporController::class, 'saveSIA']);
     Route::post('rapor/simSia', [App\Http\Controllers\raporController::class, 'simSIA'])->name('simpanSIA');
+    Route::get('rapor/rangRapor', [App\Http\Controllers\raporController::class, 'rangRapor']);
 });

@@ -85,12 +85,12 @@
                     <td align="center">E</td>
                 @endif
             @endforeach
-            <td align="center">{{ round($rata->where('mapel_id', $data->mapel_id)->avg('nilai')) }}</td>
+            <td align="center">{{ round($rata->where('mapel_id', $data->mapel_id)->avg('nilai'), 2) }}</td>
         </tr>
     @endforeach
     <tr>
         <td colspan="2" align="center">Jumlah Rerata</td>
-        <td align="center">{{ round($rataAnak) }}</td>
+        <td align="center">{{ round($rataAnak, 2) }}</td>
         <td></td>
         <td align="center"></td>
     </tr>
@@ -101,7 +101,7 @@
     <tbody>
     <tr>
         <td width="34%"><b>Rangking</b></td>
-        <td width="20%" style="text-align: center"><b>{{ $na->ranking }}</b></td>
+        <td width="20%" style="text-align: center"><b>{{ $na->ranking }}</b> dari {{ $jum_siswa }} siswa</td>
     </tr>
     <tr>
         <td>Kepribadian</td>
