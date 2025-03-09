@@ -46,6 +46,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/aktifTa/{id}', [App\Http\Controllers\AdminController::class, 'aktifTa']);
     Route::get('/admin/KelasSiswa', [App\Http\Controllers\AdminController::class, 'KelasSiswa']);
     Route::get('/admin/KelasSiswa/{id}', [App\Http\Controllers\AdminController::class, 'KelasSiswaId']);
+    Route::get('/admin/berhenti/{id}', [App\Http\Controllers\AdminController::class, 'berhenti']);
     Route::get('/admin/createMapel', [App\Http\Controllers\AdminController::class, 'createMapel']);
     Route::post('/admin/saveMapel', [App\Http\Controllers\AdminController::class, 'saveMapel']);
     Route::get('/admin/kembaliKelas/{id}', [App\Http\Controllers\AdminController::class, 'kembaliKelas']);

@@ -167,7 +167,7 @@
         <td>{{$tgl->tgl_rapor}}</td>
         <td>Dengan Memperhatikan Hasil Yang Di Capai Pada Semester I Dan II Maka Murid ini Ditetapkan :</td>
     </tr>
-    @if($rataAnak >= 59)
+    @if($rataAnak >= 60)
         <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

@@ -21,7 +21,7 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>{{ $data->nis }}</td>
-                            <td>{{ $data->nama }}</td>
+                            <td>{{ strtoupper($data->nama) }}</td>
                             {{-- query nilai siswa  --}}
                             @foreach($mapel_kelas as $data1)
                                 <td>
@@ -44,7 +44,7 @@
                                     @endif
                                 </td>
                             @endforeach
-                            <td>{{ round($rerata) }}</td>
+                            <td>{{ round($rerata, 2) }}</td>
                         </tr>
                         @endforeach
                     </table>

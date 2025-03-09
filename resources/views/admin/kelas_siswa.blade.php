@@ -59,6 +59,9 @@
                             <a href="{{ url('/admin/naikKelas/'.$siswa->id) }}">
                                 <button class="btn btn-success btn-sm">Naik kelas</button>
                             </a>
+                            <a href="{{ url('/admin/berhenti/'.$siswa->id) }}"  onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" >
+                                <button class="btn btn-warning btn-sm">Berhenti</button>
+                            </a>
 
                         </td>
                     </tr>

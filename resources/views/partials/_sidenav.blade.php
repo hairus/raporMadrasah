@@ -59,7 +59,7 @@
                             <li><a href="{{url('/admin/showUser')}}">List User</a></li>
                             <li><a href="{{url('/admin/showSiswaEdit')}}">Edit Siswa</a></li>
                             <li><a href="{{url('/admin/singkron')}}">Singkron Nilai</a></li>
-                            <li><a href="{{url('/admin/DelSiswa')}}">Delete SIswa</a></li>
+{{--                            <li><a href="{{url('/admin/DelSiswa')}}">Delete SIswa</a></li>--}}
                         </ul>
                     </li>
                 </ul>

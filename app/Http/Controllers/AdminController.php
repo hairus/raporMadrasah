@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kep;
 use App\Models\MapelKelas;
 use App\Models\mst_siswa;
+use App\Models\SIA;
 use App\Models\User;
 use App\Models\wali;
 use Carbon\Carbon;
@@ -548,7 +550,7 @@ class AdminController extends Controller
         ])->get();
 
         //ambil siswa
-        $siswa = mst_siswa::where('kls', $kelas)->get();
+        $siswa = mst_siswa::where('kls', $kelas)->orderBy('nama')->get();
 
         //butuh trx_nilai
         $trx_nilai = trx_nilai::where([
@@ -882,6 +884,18 @@ class AdminController extends Controller
     {
         $wali = wali::find($id);
         $wali->delete();
+
+        return back();
+    }
+
+    public function berhenti($id)
+    {
+        $siswa = mst_siswa::find($id);
+        $trx_nilai = trx_nilai::where('nis', $siswa->nis)->delete();
+        $nilai_akhir = nilai_akhir::where('nis', $siswa->nis)->delete();
+        $sia = SIA::where('nis', $siswa->nis)->delete();
+        $kep = kep::where('nis', $siswa->nis)->delete();
+        $siswa->delete();
 
         return back();
     }

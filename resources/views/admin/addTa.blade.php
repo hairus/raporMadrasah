@@ -70,8 +70,8 @@
                     @foreach($ta as $data)
                     <tr>
                         <td>1</td>
-                        <td>{{ $data->ta }}</td>
-                        <td>{{ $data->smt }}</td>
+                        <td>{{ $data->nama }}</td>
+                        <td>{{ $data->semester }}</td>
                         <td>{{ $data->aktif }}</td>
                         <td>
                             @if($data->aktif == 0)
