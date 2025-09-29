@@ -27,6 +27,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     Route::get('admin/inputSiswa', [App\Http\Controllers\HomeController::class, 'inputSiswa']);
+    Route::post('admin/updateSiswas', [App\Http\Controllers\HomeController::class, 'updateSiswas']);
+    Route::get('admin/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit']);
     Route::get('admin/delSiswa/{id}', [App\Http\Controllers\HomeController::class, 'delSiswa']);
     Route::post('admin/SimSis', [App\Http\Controllers\HomeController::class, 'save']);
     Route::get('admin/absen', [App\Http\Controllers\AdminController::class, 'index']);

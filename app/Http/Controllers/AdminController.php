@@ -740,7 +740,7 @@ class AdminController extends Controller
         $kelas = Kelas::where('kelas', '<>', 'lulus')->get();
 
         $ta = ta::where('aktif', 1)->first();
-        if($ta->smt == 1){
+        if($ta->semester == 1){
             // ini funsi untuk insert dan update nilai ke table nilai_akhirs
             foreach ($kelas as $data) {
                 $kelas_siswa = mst_siswa::where([

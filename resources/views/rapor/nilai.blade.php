@@ -17,7 +17,7 @@
       <td width="1%">&nbsp;</td>
       <td width="18%">TAHUN PELAJARAN</td>
       <td width="1%">:</td>
-      <td width="24%">Smt {{ $ta->smt }} - {{ $ta->ta }} </td>
+      <td width="24%">Smt {{ $ta->semester }} - {{ $ta->tahun }} </td>
     </tr>
     <tr>
       <td>ALAMAT</td>
@@ -177,7 +177,9 @@
         <p>Mengetahui</p>
         <p>Orang Tua/ Wali</p>
         <p>&nbsp;</p>
-        <p><strong><u>{{ $siswa->wali }}</u></strong></p>
+        <p>
+            <strong><u>{{ ucfirst($siswa->na) }}</u></strong>
+        </p>
       </td>
       {{--      <td align="center"><p>&nbsp;</p>--}}
       {{--        <p>Wali Kelas</p>--}}

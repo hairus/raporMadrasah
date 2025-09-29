@@ -83,13 +83,21 @@
                                placeholder="Pekerjaan Ayah">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                     </div>
-
                     <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                         <input name="Pi" type="text" class="form-control" id="inputSuccess5"
                                placeholder="Pekerjaan Ibu">
                         <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
                     </div>
-
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input name="tempat" type="text" class="form-control has-feedback-left" id="inputSuccess2"
+                               placeholder="Tempat Lahir">
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input name="tgl_lahir" type="text" class="form-control has-feedback-left" id="inputSuccess2"
+                               placeholder="tgl_lahir">
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                    </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
@@ -129,6 +137,9 @@
                                 <td>{{ $siswa->nama }}</td>
                                 <td>{{ $siswa->kls }}</td>
                                 <td>
+                                    <a href="{{ url('/admin/edit/'.$siswa->id)}}">
+                                        <button class="btn btn-sm btn-success">Edit</button>
+                                    </a>
                                     <a href="{{ url('/admin/delSiswa/'.$siswa->id)}}">
                                         <button class="btn btn-sm btn-danger">Delete</button>
                                     </a>

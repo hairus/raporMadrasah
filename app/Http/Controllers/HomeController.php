@@ -43,6 +43,24 @@ class HomeController extends Controller
         return view('admin/formInput', compact('siswas'));
     }
 
+    public function edit($id)
+    {
+        $siswa = mst_siswa::find($id);
+
+        return view('admin/editSiswa1', compact('siswa'));
+    }
+
+    public function updateSiswas(Request $request)
+    {
+        $update = mst_siswa::find($request->id);
+        $update->update([
+            "tempat" => $request->tempat,
+            "tgl_lahir" => $request->tgl_lahir
+        ]);
+
+        return redirect('admin/inputSiswa');
+    }
+
     public function delSiswa($id)
     {
         $del = mst_siswa::where('id', $id)->delete();

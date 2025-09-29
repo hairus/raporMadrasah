@@ -378,7 +378,8 @@ class raporController extends Controller
     public function rangRapor()
     {
         $ta = ta::where('aktif', 1)->first();
-        $na = nilai_akhir::with('siswas', 'tas')->orderBy('kelas_id')->orderBy('ranking')->get()->sortBy('siswas.nama');
+        $na = nilai_akhir::where('tas_id', $ta->id)->with('siswas', 'tas')->orderBy('kelas_id')->orderBy('ranking')->get()->sortBy('siswas.nama');
+
 
         return view('rapor.rangRapor', compact( 'na'));
     }
