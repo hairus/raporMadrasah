@@ -101,7 +101,7 @@
     <tbody>
     <tr>
         <td width="34%"><b>Rangking</b></td>
-        <td width="20%" style="text-align: center"><b>{{ $na->ranking }}</b> dari {{ $jum_siswa }} siswa</td>
+        <td width="20%" style="text-align: center"><b>{{ $na->ranking ? $na->rangking : 0 }}</b> dari {{ $jum_siswa }} siswa</td>
     </tr>
     <tr>
         <td>Kepribadian</td>

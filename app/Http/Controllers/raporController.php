@@ -383,4 +383,11 @@ class raporController extends Controller
 
         return view('rapor.rangRapor', compact( 'na'));
     }
+
+    public function copy()
+    {
+        $mapel = MapelKelas::get();
+
+        dd($mapel);
+    }
 }

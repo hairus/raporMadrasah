@@ -83,6 +83,21 @@
                                placeholder="tgl_lahir contoh 01-12-2025" value="{{ $siswa->tgl_lahir }}" required>
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                     </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input name="ke" type="text" class="form-control has-feedback-left" id="inputSuccess2"
+                               placeholder="tgl_lahir contoh 01-12-2025" value="{{ $siswa->tgl_lahir }}" required>
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input name="dari" type="text" class="form-control has-feedback-left" id="inputSuccess2"
+                               placeholder="tgl_lahir contoh 01-12-2025" value="{{ $siswa->tgl_lahir }}" required>
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input name="jk" type="text" class="form-control has-feedback-left" id="inputSuccess2"
+                               placeholder="tgl_lahir contoh 01-12-2025" value="{{ $siswa->tgl_lahir }}" required>
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                    </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
